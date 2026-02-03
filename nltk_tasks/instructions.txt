@@ -1,0 +1,26 @@
+User Guide for NLTK Scripts
+
+1. Recommended IDE / Editor:
+   - Visual Studio Code (VS Code) - Highly recommended for screenshots.
+   - PyCharm Community Edition
+   - IDLE (Default Python Editor) - Good for beginners.
+   - Jupyter Notebook (if you prefer interactive cells).
+
+2. Required Libraries:
+   Arguments to install via pip:
+   pip install nltk
+
+   (Note: 'numpy' is often installed automatically with nltk, but if not: pip install numpy)
+
+3. How to Run:
+   Open your terminal or command prompt in this directory (`d:\projects last sem\nltk_tasks`) and run:
+   python 1_tokenization.py
+   python 2_stopwords.py
+   python 3_stem_lemma.py
+   python 4_pos_tagging.py
+   python 5_sentiment.py
+   python 6_classifier.py
+
+4. Notes:
+   - Each script automatically attempts to download necessary NLTK data (like 'punkt', 'stopwords') using nltk.download().
+   - The outputs are printed to the console.

@@ -1,0 +1,49 @@
+{
+    "version": 2,
+    "builds": [
+        {
+            "src": "chemical-equipment-app/package.json",
+            "use": "@vercel/static-build",
+            "config": {
+                "distDir": "dist"
+            }
+        },
+        {
+            "src": "chemical-equipment-app-new/index.py",
+            "use": "@vercel/python",
+            "config": {
+                "maxDuration": 60,
+                "runtime": "python3.9"
+            }
+        }
+    ],
+    "routes": [
+        {
+            "src": "/api/(.*)",
+            "dest": "chemical-equipment-app-new/index.py"
+        },
+        {
+            "src": "/static/(.*)",
+            "dest": "chemical-equipment-app-new/staticfiles/$1"
+        },
+        {
+            "src": "/media/(.*)",
+            "dest": "chemical-equipment-app-new/media/$1"
+        },
+        {
+            "src": "/assets/(.*)",
+            "dest": "chemical-equipment-app/assets/$1"
+        },
+        {
+            "src": "/(.*)",
+            "dest": "chemical-equipment-app/$1"
+        },
+        {
+            "handle": "filesystem"
+        },
+        {
+            "src": "/.*",
+            "dest": "chemical-equipment-app/index.html"
+        }
+    ]
+}
